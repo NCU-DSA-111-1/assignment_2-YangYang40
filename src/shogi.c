@@ -501,15 +501,7 @@ int piece_rule(Coord_t st,Coord_t end,piece_t stp,piece_t endp){
         moverule = (end.x>st.x && end.x<=limit+1 && st.y-end.y == 0);
         get = check_piece(moverule,st,end);
     }
-    //Rule for R(香)
-    if(strstr(board[st.x][st.y].info,R(香))!= NULL){
-        int limit;
-        for(int i = st.x+1; board[i][st.y].color =='N'; i++){
-            limit = i;
-        }
-        moverule = (end.x>st.x && end.x<=limit+1 && st.y-end.y == 0);
-        get = check_piece(moverule,st,end);
-    }
+    
     //Rule for B(桂)
     if(strstr(board[st.x][st.y].info,B(桂))!= NULL){
         moverule = ((st.x-end.x == 2 && st.y-end.y == 1) || (st.x-end.x == 2 && st.y-end.y == -1));
