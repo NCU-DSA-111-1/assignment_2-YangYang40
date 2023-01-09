@@ -333,6 +333,7 @@ void play(char *filename){
     while(win==0){
        
         if(hands %2 == 1){
+            //Blue player plays
             printf("\nThis is hand no. %d\n",hands);
             win = playermove('B');
             memhand = hands;
@@ -351,6 +352,7 @@ void play(char *filename){
             
         }
         else if(hands%2 == 0){
+            //Red player plays
             printf("\nThis is hand no. %d\n",hands);
             win = playermove('R');
             memhand = hands;
