@@ -344,8 +344,8 @@ void play(char *filename){
             }
             hands +=1;
             push(playing_stack,board);
-            if(win == 2){
-                printf("Game Over! Player\033[34m X \033[mWin!\n");
+            if(win == 1){
+                printf("Game Over! Player\033[34m B \033[mWin!\n");
                 break;
             }
             
@@ -363,8 +363,8 @@ void play(char *filename){
             hands+=1;
             push(playing_stack,board);
         }
-        if(win == 1){
-            printf("Game Over! Player\033[31m Y \033[mWin!\n");
+        if(win == 2){
+            printf("Game Over! Player\033[31m R \033[mWin!\n");
         }
 
     }
@@ -488,7 +488,7 @@ int piece_rule(Coord_t st,Coord_t end,piece_t stp,piece_t endp){
         for(int i = st.x-1; board[i][st.y].color =='N'; i--){
             limit = i;
         }
-        printf("\nlimit = %d\n",limit);//tmp
+        
         moverule = (end.x<st.x && end.x>=limit-1 && st.y-end.y == 0);
         get = check_piece(moverule,st,end);
     }
