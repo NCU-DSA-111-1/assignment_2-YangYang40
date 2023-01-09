@@ -1,5 +1,6 @@
 # Shogi in C with replay mode
-DS Assignment 2
+DS Assignment 2 (Files are at the "master" branch)
+
 
 ## Usage
 
