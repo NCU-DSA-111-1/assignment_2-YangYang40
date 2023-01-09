@@ -147,6 +147,7 @@ bool is_empty(const Stack_t *const stk){
 
 
 void regret_or_save(Stack_t *playing_stack,int *hand,char player){
+    // the continuous regret mode
     char det;
     int error = 0;
     printf("\nDid you want to regret this hand? Or do you want to save the board right here?\n");
@@ -285,6 +286,7 @@ void read_old_file(char *filename){
 
 
 void load_to_file(Stack_t* srcstk,Stack_t* desstk,int hand,char *filename){
+    //loads boards to file
     piece_t tmpboard[ROW][COLUMN];
     //correct order
     while(!is_empty(srcstk)){
@@ -426,6 +428,7 @@ int playermove(char player){
 }
 
 Coord_t enter_piece(Coord_t *playmem){
+    //user enter piece coordinate and function translate 
     Coord_t piece;
     int tmp;
     printf("Please enter the coordinate of the piece that you want to move:\n");
@@ -440,6 +443,7 @@ Coord_t enter_piece(Coord_t *playmem){
 }
 
 Coord_t enter_target(void){
+    //user enter target and function translate 
     Coord_t target;
     int tmp;
     printf("Please enter which coordinate you want this piece to move to \n");
@@ -651,7 +655,7 @@ int main(int argc, char *argv[]){
     
     char *filename;
     for(int i = 0;i<argc;i++){
-        
+        //arg settings
         if(i==1){
             char *arg = argv[i];
             char *arg2 = argv[i+1];
